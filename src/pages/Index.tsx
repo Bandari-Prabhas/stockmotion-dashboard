@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import StockTicker from "@/components/StockTicker";
@@ -6,12 +5,13 @@ import MarketMetrics from "@/components/MarketMetrics";
 import MarketChart from "@/components/MarketChart";
 import NewsSection from "@/components/NewsSection";
 import InvestmentOpportunities from "@/components/InvestmentOpportunities";
+import TradingGuide from "@/components/TradingGuide"; // Import TradingGuide
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/50">
       <Navbar />
-      
+
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
@@ -50,6 +50,36 @@ const Index = () => {
         <StockTicker />
       </motion.section>
 
+      {/* News Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7 }}
+        className="py-8"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-center mb-6 font-heading">
+            Latest News
+          </h2>
+          <NewsSection />
+        </div>
+      </motion.section>
+
+      {/* Trading Guide Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.75 }}
+        className="py-8"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-center mb-6 font-heading">
+            Trading Guide
+          </h2>
+          <TradingGuide />
+        </div>
+      </motion.section>
+
       {/* Market Overview Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
@@ -63,12 +93,9 @@ const Index = () => {
           </h2>
           <MarketMetrics />
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
-            <div className="lg:col-span-2">
-              <MarketChart />
-            </div>
+          <div className="h-screen w-full mt-4">
             <div>
-              <NewsSection />
+              <MarketChart />
             </div>
           </div>
         </div>
