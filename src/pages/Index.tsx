@@ -1,10 +1,10 @@
-
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import StockTicker from "@/components/StockTicker";
 import MarketMetrics from "@/components/MarketMetrics";
 import MarketChart from "@/components/MarketChart";
 import NewsSection from "@/components/NewsSection";
+import InvestmentOpportunities from "@/components/InvestmentOpportunities";
 
 const Index = () => {
   return (
@@ -72,6 +72,9 @@ const Index = () => {
           </div>
         </div>
       </motion.section>
+
+      {/* Investment Opportunities Section */}
+      <InvestmentOpportunities />
 
       {/* Coming Soon Section */}
       <motion.section
