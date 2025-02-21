@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import StockTicker from "@/components/StockTicker";
 import MarketMetrics from "@/components/MarketMetrics";
+import MarketChart from "@/components/MarketChart";
+import NewsSection from "@/components/NewsSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/50">
       <Navbar />
       
       {/* Hero Section */}
@@ -21,7 +23,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading"
           >
             Track. Analyze.{" "}
             <span className="text-primary">Invest</span>
@@ -30,7 +32,7 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-6 text-xl text-gray-600 max-w-2xl mx-auto"
+            className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto font-montserrat"
           >
             Real-time market data and powerful analytics to help you make informed investment decisions.
           </motion.p>
@@ -47,7 +49,7 @@ const Index = () => {
         <StockTicker />
       </motion.section>
 
-      {/* Market Metrics Section */}
+      {/* Market Overview Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -55,10 +57,19 @@ const Index = () => {
         className="py-16"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 font-heading">
             Market Overview
           </h2>
           <MarketMetrics />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+            <div className="lg:col-span-2">
+              <MarketChart />
+            </div>
+            <div>
+              <NewsSection />
+            </div>
+          </div>
         </div>
       </motion.section>
 
@@ -67,13 +78,13 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="py-16 bg-gradient-to-b from-gray-50 to-white"
+        className="py-16 bg-gradient-to-b from-muted/50 to-background"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-semibold text-gray-900">
+          <h2 className="text-2xl font-semibold font-heading">
             More Features Coming Soon
           </h2>
-          <p className="mt-4 text-gray-600">
+          <p className="mt-4 text-muted-foreground font-montserrat">
             Stay tuned for portfolio tracking, detailed analytics, and more.
           </p>
         </div>
