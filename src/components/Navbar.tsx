@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { MenuIcon, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,7 +23,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +34,7 @@ const Navbar = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center"
           >
-            <span className="text-2xl font-bold text-primary">StockMotion</span>
+            <span className="font-heading text-2xl font-bold text-primary">StockMotion</span>
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -44,11 +45,12 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * (index + 1) }}
-                className="text-gray-700 hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-colors font-montserrat"
               >
                 {item}
               </motion.a>
             ))}
+            <ThemeToggle />
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -58,7 +60,8 @@ const Navbar = () => {
             </motion.div>
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
@@ -74,14 +77,14 @@ const Navbar = () => {
       <motion.div
         initial={false}
         animate={{ height: isMobileMenuOpen ? "auto" : 0 }}
-        className="md:hidden overflow-hidden bg-white"
+        className="md:hidden overflow-hidden bg-background/95 backdrop-blur-sm"
       >
         <div className="px-4 pt-2 pb-3 space-y-1">
           {["Markets", "Portfolio", "News", "Learn"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors"
+              className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-montserrat"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item}

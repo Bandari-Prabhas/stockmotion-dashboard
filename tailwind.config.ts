@@ -54,6 +54,11 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: {
+        sans: ["Poppins", "system-ui", "sans-serif"],
+        heading: ["Playfair Display", "serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -68,9 +73,6 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-      },
-      fontFamily: {
-        inter: ["Inter", "sans-serif"],
       },
     },
   },
