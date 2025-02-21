@@ -22,7 +22,7 @@ const StockTicker = () => {
         prev.map(stock => ({
           ...stock,
           price: (parseFloat(stock.price) * (1 + (Math.random() - 0.5) * 0.002)).toFixed(2),
-          change: `${(Math.random() - 0.5) * 4).toFixed(2)}%`
+          change: `${((Math.random() - 0.5) * 4).toFixed(2)}%`
         }))
       );
     }, 3000);
